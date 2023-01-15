@@ -78,6 +78,7 @@ h1 {
 
 input[type="submit"] {
     cursor: pointer;
+    border: 0;
 }
 
 input[type="submit"]:hover {
@@ -89,7 +90,7 @@ input[type="password"],
 input[type="submit"] {
     background-color: rgb(30, 30, 50);
     color: #fff;
-    border: 1 1 1 1;
+    border: 1;
     border-style: solid;
     border-radius: 10px;
     margin: 5px;
