@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="img/hacker-icon.svg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PULSa</title>
+</head>
+
+<body style="background-image: url('img/dark-landscape.png');">
+    <div class="container">
+        <a href="index" class="regular-a">
+            <h1 class="animated-icon">PULSa</h1>
+        </a>
+        <p>Projet Ultime de Léo et Salah<span class="blink">_</span></p>
+        <div class="login">
+            <form id="log" style="display: flex; flex-direction: column;">
+                <img src="img/hacker-icon.svg" alt="Hacker Icon" height="100">
+                <label for="password" style="text-align: center;">Clé d'accès</label>
+                <input type="password" id="password" name="password" required>
+                <input type="submit" onclick="redirect()" value="Accéder au contenu">
+                <p id="cita" style="text-align: center;">""</p>
+            </form>
+
+        </div>
+    </div>
+    <script src="js/form.js"></script>
+    <script src="js/cita.js"></script>
+</body>
+
+</html>
