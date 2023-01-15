@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+/* Dark color scheme */
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+/* Bold typography */
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.blink {
+    animation: blink-animate 0.5s infinite;
+}
+
+.vis {
+    visibility: visible;
+}
+
+@keyframes blink-animate {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Minimalist layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* CSS animations */
+.animated-icon {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.login {
+    padding: 20px;
+    margin: 10px;
+    background: rgb(10, 10, 30);
+    border-radius: 15px;
+    max-width: 300px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(50, 50, 155);
+}
+
+/* Add dark color to input elements */
+input[type="password"],
+input[type="submit"] {
+    background-color: rgb(30, 30, 50);
+    color: #fff;
+    border: 1 1 1 1;
+    border-style: solid;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.error {
+    border-color: red;
+    border: 1;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
