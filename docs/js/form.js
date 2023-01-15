@@ -13,6 +13,12 @@ function redirect() {
         case "rus40480": // ne
             window.location.href = "https://1drv.ms/b/s!AqmbMbAJ0AVagaBiTeOsjZ_Ai7ZVlA?e=ctaa0W";
             break;
+        case "s0uh3ib": // nsi
+            window.location.href = "https://github.com/Leo-Peyronnet/Python-Stuff/tree/main/FR";
+            break;
+        case "ultime": // bac
+            window.location.href = "https://1drv.ms/b/s!AqmbMbAJ0AVagZ9WxLyYAOKTLxDv9A?e=iWNDHw";
+            break;
 
         default:
             pwr.classList.add("error");
