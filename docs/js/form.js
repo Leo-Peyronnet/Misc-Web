@@ -25,6 +25,9 @@ function redirect() {
         case "cpu2": // NSI CPU2
             window.location.href = "https://1drv.ms/w/s!AqmbMbAJ0AVagaBoM1xQYzTBX1ioVw?e=acbQqW";
             break;
+        case "assembleur": // AQA ASM
+            window.location.href = "https://github.com/Leo-Peyronnet/Useful-Scripts/tree/main/src/AQA%20-%20ASM";
+            break;
         default:
             pwr.classList.add("error");
             a = document.getElementById("cita").innerHTML;
