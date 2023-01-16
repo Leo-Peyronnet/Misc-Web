@@ -19,7 +19,12 @@ function redirect() {
         case "ultime": // bac
             window.location.href = "https://1drv.ms/b/s!AqmbMbAJ0AVagZ9WxLyYAOKTLxDv9A?e=iWNDHw";
             break;
-
+        case "cpu1": // NSI CPU
+            window.location.href = "https://1drv.ms/w/s!AqmbMbAJ0AVagaBpuf_nXXZpw--EgA?e=hfYd11";
+            break;
+        case "cpu2": // NSI CPU2
+            window.location.href = "https://1drv.ms/w/s!AqmbMbAJ0AVagaBoM1xQYzTBX1ioVw?e=acbQqW";
+            break;
         default:
             pwr.classList.add("error");
             a = document.getElementById("cita").innerHTML;
