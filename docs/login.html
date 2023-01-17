@@ -43,6 +43,12 @@
     </div>
     <script src="js/form.js"></script>
     <script src="js/cita.js"></script>
+    <script>
+        if (!localStorage.getItem("clio")) {
+            let quote = document.getElementById("cita");
+            quote.innerHTML = "Arrête de voler mes cours."
+        }
+    </script>
 </body>
 
 </html>

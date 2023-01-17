@@ -28,9 +28,6 @@ function redirect() {
         case "assembleur": // AQA ASM
             window.location.href = "https://github.com/Leo-Peyronnet/Useful-Scripts/tree/main/src/AQA%20-%20ASM";
             break;
-        case "superbe": // ESSVT
-            window.location.href = "https://1drv.ms/b/s!AqmbMbAJ0AVagaBr8V3wCeCtIlcKtA?e=cLDcBH";
-            break;
         case "clio": // hmmm
             window.location.href = "https://leo-peyronnet.github.io/Misc-Web/clio";
             localStorage.setItem("clio", true);
