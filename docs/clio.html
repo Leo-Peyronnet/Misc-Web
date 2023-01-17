@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="img/hacker-icon.svg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Social networks meta -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://leo-peyronnet.github.io/Misc-Web/img/social.png">
+    <meta name="twitter:description" content="Ultime_">
+    <meta name="twitter:title" content="PULSa">
+    <meta name="robots" content="noindex">
+
+    <!-- Facebook/Linkedin -->
+    <meta property="og:description" content="Ultime_">
+    <meta property="og:image" content="https://leo-peyronnet.github.io/Misc-Web/img/social.png">
+    <meta property="og:title" content="PULSa">
+
+    <meta name="description" content="Ultime_">
+    <title>PULSa</title>
+</head>
+
+<body style="background-image: url('img/dark-landscape2.png'); background-attachment: fixed;">
+    <style>
+        .hide {
+            visibility: collapse;
+        }
+    </style>
+    <div class="container">
+        <a href="index" class="regular-a">
+            <h1 class="animated-icon">PULSa x ⛓️</h1>
+        </a>
+        <p>Projet Ultime de Léo et Salah<span class="blink">_</span></p>
+        <div id="quote_block" class="quote hide" style="display: flex; align-items: center; margin: 40px 10px;">
+            <span style="font-size: 80px; margin: 0px 10px; color: rgb(50, 50, 90);">“</span>
+            <div>
+                <p style="text-align: center;">La Clio 2, petite voiture de ville<br>
+                    Utilisée pour des fins peu glorieuses<br>
+                    Les courses illégales sur les routes<br>
+                    Les délits commis à bord, sans aucunes scrupules<br><br>
+                    Mais malgré ces usages douteux<br>
+                    La Clio 2 reste un choix populaire<br>
+                    Pour ses qualités routières et son design<br>
+                    Elle est aimée de tous, malgré son histoire trouble<br><br>
+                    Alors que les voitures modernes passent<br>
+                    La Clio 2 reste ancrée dans nos mémoires<br>
+                    Comme un symbole de notre jeunesse<br>
+                    Et de nos aventures téméraires<br><br>
+                    La Clio 2, petite voiture de ville<br>
+                    Avec ses défauts et ses qualités<br>
+                    Elle restera à jamais dans nos cœurs<br>
+                    Et nous rappellera toujours notre folie juvénile.</p>
+            </div>
+            <span style="font-size: 80px; margin: 0px 10px; color: rgb(50, 50, 90);">„</span>
+
+        </div>
+    </div>
+
+    <script>
+        if (localStorage.getItem("clio")) {
+            let quote = document.getElementById("quote_block");
+            quote.classList.remove("hide")
+        }
+    </script>
+</body>
+
+</html>
