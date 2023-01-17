@@ -16,7 +16,7 @@ function redirect() {
         case "s0uh3ib": // nsi
             window.location.href = "https://github.com/Leo-Peyronnet/Python-Stuff/tree/main/FR";
             break;
-        case "ultime": // bac
+        case "LeChatUltime": // bac
             window.location.href = "https://1drv.ms/b/s!AqmbMbAJ0AVagZ9WxLyYAOKTLxDv9A?e=iWNDHw";
             break;
         case "cpu1": // NSI CPU
@@ -27,6 +27,9 @@ function redirect() {
             break;
         case "assembleur": // AQA ASM
             window.location.href = "https://github.com/Leo-Peyronnet/Useful-Scripts/tree/main/src/AQA%20-%20ASM";
+            break;
+        case "superbe": // ESSVT
+            window.location.href = "https://1drv.ms/b/s!AqmbMbAJ0AVagaBr8V3wCeCtIlcKtA?e=cLDcBH";
             break;
         case "clio": // hmmm
             window.location.href = "https://leo-peyronnet.github.io/Misc-Web/clio";
