@@ -28,6 +28,15 @@
     <style>
         .hide {
             visibility: collapse;
+            display: none;
+        }
+
+        #place {
+            display: none;
+        }
+
+        .hide~#place {
+            display: block;
         }
     </style>
     <div class="container">
@@ -35,13 +44,13 @@
             <h1 class="animated-icon">PULSa x ⛓️</h1>
         </a>
         <p>Projet Ultime de Léo et Salah<span class="blink">_</span></p>
-        <div id="quote_block" class="quote hide" style="display: flex; align-items: center; margin: 40px 10px;">
+        <div class="quote" style="display: flex; align-items: center; margin: 40px 10px;">
             <span style="font-size: 80px; margin: 0px 10px; color: rgb(50, 50, 90);">“</span>
             <div>
-                <p style="text-align: center;">La Clio 2, petite voiture de ville<br>
+                <p style="text-align: center;" class="hide" id="quote_block">La Clio 2, petite voiture de ville<br>
                     Utilisée pour des fins peu glorieuses<br>
                     Les courses illégales sur les routes<br>
-                    Les délits commis à bord, sans aucunes scrupules<br><br>
+                    Les délits commis à bord, sans aucun scrupules<br><br>
                     Mais malgré ces usages douteux<br>
                     La Clio 2 reste un choix populaire<br>
                     Pour ses qualités routières et son design<br>
@@ -54,6 +63,10 @@
                     Avec ses défauts et ses qualités<br>
                     Elle restera à jamais dans nos cœurs<br>
                     Et nous rappellera toujours notre folie juvénile.</p>
+                <p id="place" style="text-align: center;">"Il n'y a rien à voir, il n'y a rien à entendre, il n'y a rien
+                    à sentir, il n'y a rien à goûter, il n'y a rien à toucher. Il n'y a rien à penser, il n'y a rien à
+                    dire. Il n'y a rien à faire. Il n'y a rien." - Søren Kierkegaard, Diapsalmata
+                </p>
             </div>
             <span style="font-size: 80px; margin: 0px 10px; color: rgb(50, 50, 90);">„</span>
 
