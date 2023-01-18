@@ -18,6 +18,3 @@ function getRandomQuote() {
 
 const quote = getRandomQuote();
 document.getElementById("cita").innerHTML = quote;
-if (localStorage.getItem("clio")) {
-    document.getElementById("cita").innerHTML = "J: Arrête de voler mes cours."
-}
