@@ -10,6 +10,7 @@ async function redirect() {
     for (let i = 0; i < data.length; i++) {
         if (data[i].case == pwr.value) {
             window.location.href = data[i].url;
+            return;
         }
     }
     pwr.classList.add("error");
