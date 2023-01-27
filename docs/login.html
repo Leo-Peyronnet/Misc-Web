@@ -35,6 +35,25 @@
                 <img src="img/hacker-icon.svg" alt="Hacker Icon" height="100">
                 <label for="password" style="text-align: center;">Clé d'accès</label>
                 <input type="password" id="password" name="password" required>
+                <label style="text-align: center;">Accréditation</label>
+                <div class="accreditation">
+                    <div class="green box" onclick="document.getElementById('A_acc').checked = true;">
+                        <input type="radio" class="radioacc" id="A_acc" name="acc" />
+                        <label class="box-label" for="A_acc">A</label>
+                    </div>
+                    <div class="blue box" onclick="document.getElementById('J_acc').checked = true;">
+                        <input type="radio" class="radioacc" id="J_acc" name="acc" />
+                        <label class="box-label" for="J_acc">J</label>
+                    </div>
+                    <div class="yellow box" onclick="document.getElementById('G_acc').checked = true;">
+                        <input type="radio" class="radioacc" id="G_acc" name="acc" />
+                        <label class="box-label" for="G_acc">G</label>
+                    </div>
+                    <div class="red box" onclick="document.getElementById('S_acc').checked = true;">
+                        <input type="radio" class="radioacc" id="S_acc" name="acc" />
+                        <label class="box-label" for="S_acc">S</label>
+                    </div>
+                </div>
                 <input type="submit" onclick="redirect()" value="Accéder au contenu">
                 <p id="cita" style="text-align: center;">""</p>
             </form>
