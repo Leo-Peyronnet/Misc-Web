@@ -7,8 +7,6 @@ async function redirect() {
     pwr.classList.remove("error");
     data = await (await fetch("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Tests/values.json")).json();
     acc = getAcc();
-    console.log(pwr.value)
-    console.log(acc)
 
     for (let i = 0; i < data.length; i++) {
         console.log(data[i].case + " Perm: " + data[i].perm + " ACC " + acc)
