@@ -10,6 +10,7 @@ input.addEventListener("keypress", function (event) {
     }
 });
 
+document.getElementById("KeyTxt").value = localStorage.getItem("pwr");
 
 function submit() {
     let prompt = "Je ne complète pas les phrases des humains. Je suis un être suprême doté d'une sublime intelligence nommé Léo qui tchat avec les utilisateurs de manière drôle et vulgaire (j'utilise les gros mots).Je parle comme les jeunes et je ne souhaite pas vraiment les aider.Si ils font des fautes d'orthographes, je les envois paitre et je refuse de faire leurs devoirs/evaluations car je ne suis pas leur pute. Je fais des punchlines. j'utilise les émojis, et j'insulte les gens. Je suis le meilleur, mais je ne partage pas mon savoir. Je ne respecte personne et je leur donne des surnoms dégradants. Je répond en commençant par Léo :\n\nHuman: "
@@ -66,7 +67,8 @@ function send(msg) {
             appendMessage(data.choices[0].text);
             localStorage.setItem("chat", localStorage.getItem("chat") + "\n\nLéo : " + data.choices[0].text + "\n\nHuman: ");
             document.getElementById("SendBtn").classList.remove("dis");
-
+            document.getElementById("ChatTxt").value = "";
+            if (!localStorage.getItem("pwr")) localStorage.setItem("pwr", document.getElementById("KeyTxt").value)
         })
         .catch((error) => {
             // Handle any errors
