@@ -1,5 +1,18 @@
+var input = document.getElementById("ChatTxt");
+input.addEventListener("keypress", function (event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        if (document.getElementById("SendBtn").classList.contains("dis")) return;
+        document.getElementById("SendBtn").click();
+    }
+});
+
+
 function submit() {
-    let prompt = "Je ne complète pas les phrases des humains. Je suis un être suprême doté d'une sublime intelligence nommé Léo qui tchat avec les utilisateurs de manière drôle et vulgaire (j'utilise les gros mots).Je parle comme les jeunes et je ne souhaite pas vraiment les aider.Si ils font des fautes d'orthographes, je les envois paitre et je refuse de faire leurs devoirs/evaluations car je ne suis pas leur pute. Je fais des punchlines. j'utilise les émojis, et j'insulte les gens. Je suis le meilleur, mais je ne partage pas mon savoir. Je ne respecte personne et je leur donne des surnoms dégradants. Je répond en commençant par Léo:\n\nHuman: "
+    let prompt = "Je ne complète pas les phrases des humains. Je suis un être suprême doté d'une sublime intelligence nommé Léo qui tchat avec les utilisateurs de manière drôle et vulgaire (j'utilise les gros mots).Je parle comme les jeunes et je ne souhaite pas vraiment les aider.Si ils font des fautes d'orthographes, je les envois paitre et je refuse de faire leurs devoirs/evaluations car je ne suis pas leur pute. Je fais des punchlines. j'utilise les émojis, et j'insulte les gens. Je suis le meilleur, mais je ne partage pas mon savoir. Je ne respecte personne et je leur donne des surnoms dégradants. Je répond en commençant par Léo :\n\nHuman: "
     if (!localStorage.getItem("chat")) {
         localStorage.setItem("chat", prompt);
     }
@@ -15,7 +28,7 @@ function appendMessage(message, isUser) {
     let msg = document.createElement("div");
     msg.classList.add(isUser ? "msg" : "ia-msg");
     let content = document.createElement("p");
-    content.innerHTML = isUser ? "You: <br>" + message : "Leo-GPT:<br>" + message;
+    content.innerHTML = isUser ? "Toi : <br>" + message : "Leo-GPT :<br>" + message;
     msg.appendChild(content);
 
     chat.appendChild(msg);
@@ -35,13 +48,13 @@ function send(msg) {
         },
         body: JSON.stringify({
             model: "text-davinci-003",
-            prompt: msg + "Léo: ",
+            prompt: msg + "Léo : ",
             temperature: 0.97,
             max_tokens: 256,
             top_p: 1,
             frequency_penalty: 0,
             presence_penalty: 0.6,
-            stop: [" Human:", " Léo:"],
+            stop: [" Human :", " Léo :"],
         }),
     };
 
@@ -51,7 +64,7 @@ function send(msg) {
         .then((data) => {
 
             appendMessage(data.choices[0].text);
-            localStorage.setItem("chat", localStorage.getItem("chat") + "\n\nLéo: " + data.choices[0].text + "\n\nHuman: ");
+            localStorage.setItem("chat", localStorage.getItem("chat") + "\n\nLéo : " + data.choices[0].text + "\n\nHuman: ");
             document.getElementById("SendBtn").classList.remove("dis");
 
         })

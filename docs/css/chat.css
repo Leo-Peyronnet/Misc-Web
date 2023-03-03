@@ -1,3 +1,7 @@
+body {
+    color: white;
+}
+
 #chatbox {
     height: 75vh;
     border: solid 1px white;

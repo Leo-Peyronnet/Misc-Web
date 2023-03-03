@@ -93,6 +93,8 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: rgb(50, 50, 155);
+    color: white;
+
 }
 
 /* Add dark color to input elements */
