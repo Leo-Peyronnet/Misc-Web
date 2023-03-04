@@ -64,6 +64,7 @@ function send(msg) {
             stop: [" Human :", " Léo :"],
         }),
     };
+    document.getElementById("ChatTxt").value = "";
 
     // Send the request and handle the response
     fetch("https://api.openai.com/v1/completions", requestOptions)
@@ -73,7 +74,6 @@ function send(msg) {
             appendMessage(data.choices[0].text);
             localStorage.setItem("chat", localStorage.getItem("chat") + "\n\nLéo : " + data.choices[0].text + "\n\nHuman: ");
             document.getElementById("SendBtn").classList.remove("dis");
-            document.getElementById("ChatTxt").value = "";
             if (!localStorage.getItem("pwr")) localStorage.setItem("pwr", document.getElementById("KeyTxt").value)
         })
         .catch((error) => {
