@@ -54,24 +54,32 @@ input[type="password"] {
 }
 
 .msg {
-    padding: 5px 10px;
+    padding: 4px;
     margin: 5px;
     border-radius: 10px;
     background: #303055;
     color: white;
-    align-self: flex-end;
-    min-width: 25%;
-    max-width: 50%;
-
+    font-weight: bold;
 }
 
 .ia-msg {
-    padding: 5px;
+    padding: 4px;
     margin: 5px;
     border-radius: 10px;
-    background: #161630;
-    color: white;
+    background: white;
+    color: #161630;
+    font-weight: bold;
+}
+
+.left {
     align-self: flex-start;
+    min-width: 25%;
+    max-width: 50%;
+}
+
+.right {
+    align-self: flex-end;
+
     min-width: 25%;
     max-width: 50%;
 }
@@ -87,4 +95,13 @@ input[type="password"] {
     width: 0;
     height: 0;
     visibility: collapse;
+}
+
+p {
+    margin: 10px;
+}
+
+.username {
+    margin: 5px;
+    font-weight: bold;
 }

@@ -26,13 +26,19 @@ function submit() {
 
 function appendMessage(message, isUser) {
     let chat = document.getElementById("chatbox");
+    let msg_container = document.createElement("div");
     let msg = document.createElement("div");
+    let user_name = document.createElement("p");
+    user_name.innerHTML = isUser ? "Toi" : "Leo-GPT"
+    user_name.classList.add("username");
+    msg_container.classList.add(isUser ? "right" : "left");
     msg.classList.add(isUser ? "msg" : "ia-msg");
     let content = document.createElement("p");
-    content.innerHTML = isUser ? "Toi : <br>" + message : "Leo-GPT :<br>" + message;
+    content.innerHTML = message;
     msg.appendChild(content);
-
-    chat.appendChild(msg);
+    msg_container.appendChild(user_name);
+    msg_container.appendChild(msg);
+    chat.appendChild(msg_container);
     document.getElementById("chatbox").scrollTop = 99999999
 }
 
@@ -74,7 +80,7 @@ function send(msg) {
             // Handle any errors
             console.error(error);
             localStorage.removeItem("chat");
-            appendMessage("Oups, une erreur s'est produite, la conversation s'est réinitalisée.");
+            appendMessage("Oups, une erreur s'est produite, la conversation s'est réinitialisée.");
             document.getElementById("SendBtn").classList.remove("dis");
 
         });
@@ -83,7 +89,7 @@ function send(msg) {
 function reset() {
     localStorage.removeItem("chat");
     document.getElementById("chatbox").innerHTML = "";
-    appendMessage("La conversation s'est réinitalisée.");
+    appendMessage("La conversation s'est réinitialisée.");
     document.getElementById("SendBtn").classList.remove("dis");
 
 
