@@ -5,7 +5,6 @@
     "display": "standalone",
     "background_color": "#1e1e32",
     "theme_color": "#1e1e32",
-    "scope": ".",
     "description": "Leo-GPT chat.",
     "icons": [
         {
