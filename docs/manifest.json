@@ -2,6 +2,7 @@
     "name": "Leo-GPT",
     "short_name": "Leo-GPT",
     "start_url": "chat.html",
+    "scope": "https://leo-peyronnet.github.io/Misc-Web/",
     "display": "standalone",
     "background_color": "#1e1e32",
     "theme_color": "#1e1e32",
