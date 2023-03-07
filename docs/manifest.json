@@ -1,22 +1,22 @@
 {
     "name": "Leo-GPT",
     "short_name": "Leo-GPT",
-    "start_url": "chat.html",
-    "scope": "https://leo-peyronnet.github.io/Misc-Web/",
-    "display": "standalone",
+    "description": "Leo-GPT chat application.",
+    "scope": "/Misc-Web/",
+    "start_url": "/Misc-Web/",
     "background_color": "#1e1e32",
     "theme_color": "#1e1e32",
-    "description": "Leo-GPT chat.",
+    "display": "standalone",
     "icons": [
         {
-            "src": "img/Logo192.png",
-            "sizes": "192x192",
-            "type": "image/png"
+            "src": "/Misc-Web/img/Logo192.png",
+            "type": "image/png",
+            "sizes": "192x192"
         },
         {
-            "src": "img/Logo.png",
-            "sizes": "512x512",
-            "type": "image/png"
+            "src": "/Misc-Web/img/Logo.png",
+            "type": "image/png",
+            "sizes": "512x512"
         }
     ]
 }
