@@ -3,7 +3,7 @@
     "short_name": "Leo-GPT",
     "description": "Leo-GPT chat application.",
     "scope": "/Misc-Web/",
-    "start_url": "/Misc-Web/",
+    "start_url": "/Misc-Web/chat",
     "background_color": "#1e1e32",
     "theme_color": "#1e1e32",
     "display": "standalone",
