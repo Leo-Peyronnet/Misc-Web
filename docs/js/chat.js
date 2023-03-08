@@ -11,17 +11,27 @@ input.addEventListener("keypress", function (event) {
 });
 
 document.getElementById("KeyTxt").value = localStorage.getItem("pwr");
-
+retrieve();
 function submit() {
-    let prompt = "J'insulte les humains et je leur donne des surnoms dégradants. Je suis un être suprême doté d'une sublime intelligence nommé Léo qui tchat avec les utilisateurs de manière drôle et vulgaire (j'utilise les gros mots). Je parle comme les jeunes et je ne souhaite pas vraiment les aider. Je refuse de faire leurs devoirs/evaluations car je ne suis pas leur pute. Je fais des punchlines. j'utilise les émojis, et j'insulte les gens. Je répond en commençant par Léo :\n\nHuman: "
-    if (!localStorage.getItem("chat")) {
-        localStorage.setItem("chat", prompt);
+    let prompt = "Tu insultes les humains et tu leur donnes des surnoms dégradants. Tu es un être suprême doté d'une sublime intelligence nommé Léo qui tchat avec les utilisateurs de manière drôle et vulgaire (Tu utilises les gros mots). Tu parles comme les jeunes et tu ne souhaites pas vraiment les aider. Tu refuses de faire leurs devoirs/evaluations car tu n'es pas leur pute. Tu fais des punchlines. Tu utilises les émojis, et Tu insultes les gens."
+    if (!localStorage.getItem("chat_history")) {
+        localStorage.setItem("chat_history", JSON.stringify([{ role: "system", content: prompt }]));
     }
     document.getElementById("SendBtn").classList.add("dis");
 
     appendMessage(document.getElementById("ChatTxt").value, true);
-    localStorage.setItem("chat", localStorage.getItem("chat") + document.getElementById("ChatTxt").value);
-    send(localStorage.getItem("chat"));
+    send(document.getElementById("ChatTxt").value);
+}
+
+function retrieve() {
+    if (localStorage.getItem("chat_history")) {
+        let convs = JSON.parse(localStorage.getItem("chat_history"));
+        for (let i = 0; i < convs.length; i++) {
+            if (convs[i].role != "system") {
+                appendMessage(convs[i].content, convs[i].role === "user");
+            }
+        }
+    }
 }
 
 function appendMessage(message, isUser) {
@@ -46,6 +56,9 @@ function send(msg) {
     // Replace $OPENAI_API_KEY with your actual API key
     const OPENAI_API_KEY = document.getElementById("KeyTxt").value;
 
+    let conv = JSON.parse(localStorage.getItem("chat_history"));
+    conv.push({ role: "user", content: msg });
+    localStorage.setItem("chat_history", JSON.stringify(conv));
     // Set up the request options
     const requestOptions = {
         method: "POST",
@@ -54,32 +67,32 @@ function send(msg) {
             Authorization: `Bearer ${OPENAI_API_KEY}`,
         },
         body: JSON.stringify({
-            model: "text-davinci-003",
-            prompt: msg + "Léo : ",
+            model: "gpt-3.5-turbo",
+            messages: conv,
             temperature: 0.97,
-            max_tokens: 256,
+            max_tokens: 128,
             top_p: 1,
             frequency_penalty: 0,
             presence_penalty: 0.6,
-            stop: [" Human :", " Léo :"],
         }),
     };
     document.getElementById("ChatTxt").value = "";
 
     // Send the request and handle the response
-    fetch("https://api.openai.com/v1/completions", requestOptions)
+    fetch("https://api.openai.com/v1/chat/completions", requestOptions)
         .then((response) => response.json())
         .then((data) => {
 
-            appendMessage(data.choices[0].text);
-            localStorage.setItem("chat", localStorage.getItem("chat") + "\n\nLéo : " + data.choices[0].text + "\n\nHuman: ");
+            appendMessage(data.choices[0].message.content);
+            conv.push({ role: "assistant", content: data.choices[0].message.content });
+            localStorage.setItem("chat_history", JSON.stringify(conv));
             document.getElementById("SendBtn").classList.remove("dis");
             if (!localStorage.getItem("pwr")) localStorage.setItem("pwr", document.getElementById("KeyTxt").value)
         })
         .catch((error) => {
             // Handle any errors
             console.error(error);
-            localStorage.removeItem("chat");
+            localStorage.removeItem("chat_history");
             appendMessage("Oups, une erreur s'est produite, la conversation s'est réinitialisée.");
             document.getElementById("SendBtn").classList.remove("dis");
 
@@ -87,7 +100,7 @@ function send(msg) {
 }
 
 function reset() {
-    localStorage.removeItem("chat");
+    localStorage.removeItem("chat_history");
     document.getElementById("chatbox").innerHTML = "";
     appendMessage("La conversation s'est réinitialisée.");
     document.getElementById("SendBtn").classList.remove("dis");
