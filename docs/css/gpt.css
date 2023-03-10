@@ -1,0 +1,63 @@
+#options {
+    margin: 10px;
+    width: 100%;
+}
+
+#options details section {
+    display: flex;
+    overflow-x: auto;
+}
+
+.bg-white-r {
+    background-color: white;
+    color: #161630;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+summary {
+    display: flex;
+    align-items: center;
+}
+
+details[open] summary svg {
+    transform: rotate(90deg);
+}
+
+input[type="checkbox"] {
+    visibility: collapse;
+    width: 0;
+    height: 0;
+}
+
+input[type="checkbox"]:checked~.check {
+    border: 4px solid #7835c5;
+
+}
+
+.check h2 {
+    margin: 0;
+}
+
+.check {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    transition: all 0.5s;
+    width: 60px;
+    height: 60px;
+}
+
+.check:hover {
+    border: 4px solid #7835c5;
+}
+
+input[type="text"].txt {
+    max-width: 300px;
+    border: 1px solid black;
+    color: #161630;
+}
