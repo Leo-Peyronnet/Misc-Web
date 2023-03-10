@@ -12,6 +12,7 @@ body {
     justify-items: stretch;
     overflow-y: scroll;
     padding: 5px;
+    min-height: 50%;
 }
 
 ::-webkit-scrollbar {
